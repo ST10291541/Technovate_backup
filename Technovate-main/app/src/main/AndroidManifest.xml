@@ -23,6 +23,15 @@
         android:theme="@style/Theme.CHOCUI"
         tools:targetApi="31">
         <activity
+            android:name=".AdminEditActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AdminDashboardActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AdminLoginActivity"
+            android:exported="false" />
+        <activity
             android:name=".VideosActivity"
             android:exported="false" />
 
@@ -53,7 +62,7 @@
             android:exported="false" />
         <activity
             android:name=".RemembranceWallActivity"
-            android:exported="false"  />
+            android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="true">

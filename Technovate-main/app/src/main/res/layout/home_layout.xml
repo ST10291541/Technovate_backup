@@ -209,7 +209,10 @@
                         android:layout_width="80dp"
                         android:layout_height="100dp"
                         android:src="@drawable/gold_ribbon_new"
-                        android:contentDescription="Childhood Cancer Awareness Ribbon" />
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:background="?attr/selectableItemBackground"
+                        android:contentDescription="Childhood Cancer Awareness Ribbon - Tap for Admin Login" />
                 </LinearLayout>
 
             </LinearLayout>

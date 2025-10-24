@@ -2,6 +2,7 @@ package vcmsa.projects.chocui
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.ImageView
 import com.google.android.material.appbar.MaterialToolbar
 import com.google.android.material.card.MaterialCardView
 
@@ -32,6 +33,9 @@ class MainActivity : BaseActivity() {
         cardGetToKnowUs = findViewById(R.id.cardGetToKnowUs)
         cardCancerInfo = findViewById(R.id.cardCancerInfo)
 
+        // Initialize golden ribbon
+        val goldenRibbon: ImageView = findViewById(R.id.goldenRibbon)
+
         // Set click listeners for cards
         cardGetInvolved.setOnClickListener {
             startActivity(Intent(this, VolunteerActivity::class.java))
@@ -45,7 +49,10 @@ class MainActivity : BaseActivity() {
             startActivity(Intent(this, Chatbot::class.java))
         }
 
-
+// Set click listener for golden ribbon (admin login)
+        goldenRibbon.setOnClickListener {
+            val intent = Intent(this, AdminLoginActivity::class.java)
+            startActivity(intent)
+        }
     }
-
 }
