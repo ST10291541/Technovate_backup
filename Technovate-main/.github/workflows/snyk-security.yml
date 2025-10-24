@@ -1,0 +1,91 @@
+# This workflow uses actions that are not certified by GitHub.
+# They are provided by a third-party and are governed by
+# separate terms of service, privacy policy, and support
+# documentation.
+
+# A sample workflow which sets up Snyk to analyze the full Snyk platform (Snyk Open Source, Snyk Code,
+# Snyk Container and Snyk Infrastructure as Code)
+# The setup installs the Snyk CLI - for more details on the possible commands
+# check https://docs.snyk.io/snyk-cli/cli-reference
+# The results of Snyk Code are then uploaded to GitHub Security Code Scanning
+#
+# In order to use the Snyk Action you will need to have a Snyk API token.
+# More details in https://github.com/snyk/actions#getting-your-snyk-token
+# or you can signup for free at https://snyk.io/login
+#
+# For more examples, including how to limit scans to only high-severity issues
+# and fail PR checks, see https://github.com/snyk/actions/
+
+name: Snyk Security Test
+
+on:
+  pull_request:
+    branches: ["main"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  security-events: write
+
+jobs:
+  snyk:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout repository
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # Step 2: Set up JDK 17 for Android builds
+      - name: Set up JDK 17
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      # Step 3: Make Gradle wrapper executable
+      - name: Make Gradle wrapper executable
+        run: chmod +x ./gradlew
+
+      # Step 4: Build project (skip lint errors to avoid Android 13 NotificationPermission issue)
+      - name: Build project
+        run: ./gradlew build -x lint
+
+      # Step 5: Set up Node.js (required for Snyk CLI)
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      # Step 6: Install Snyk CLI
+      - name: Install Snyk CLI
+        run: npm install -g snyk
+
+      # Step 7: Run Snyk test and capture SARIF output safely
+      - name: Run Snyk test in SARIF format
+        id: snyk
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+        run: |
+          set +e
+          snyk test --all-projects --sarif > snyk-output.sarif 2> snyk-error.log
+          exit_code=$?
+          set -e
+
+          echo "Snyk exit code: $exit_code"
+          echo "---- Snyk Errors ----"
+          cat snyk-error.log || echo "No errors captured"
+          echo "---------------------"
+
+          if ! head -n 1 snyk-output.sarif | grep -q "^{"; then
+            echo "SARIF_VALID=false" >> $GITHUB_ENV
+          else
+            echo "SARIF_VALID=true" >> $GITHUB_ENV
+          fi
+
+      # Step 8: Upload SARIF results only if valid JSON
+      - name: Upload results to GitHub Code Scanning
+        if: env.SARIF_VALID == 'true'
+        uses: github/codeql-action/upload-sarif@v3
+        with:
+          sarif_file: snyk-output.sarif

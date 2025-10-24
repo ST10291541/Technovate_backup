@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">CHOC KZN</string>
+
+    <!-- Navigation -->
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_home">Home</string>
+    <string name="nav_about">About Us</string>
+    <string name="nav_donate">Donate</string>
+    <string name="nav_volunteer">Volunteer</string>
+    <string name="nav_info">Information</string>
+    <string name="nav_events">Events</string>
+    <string name="nav_contacts">Contact Us</string>
+    <string name="nav_nutrition">Nutrition</string>
+    <string name="remembrance_wall_title">Remembrance Wall</string>
+    <string name="tap_heart_subtitle">Tap a heart to remember a hero</string>
+
+    <!-- Contact -->
+    <string name="contacts_title">Contact Us</string>
+    <string name="contact_info_title">Contact Information</string>
+    <string name="phone_number">031 240 2917</string>
+    <string name="email_address">dbn@choc.org.za</string>
+    <string name="physical_address_title">Physical Address</string>
+    <string name="physical_address_dbn">Durban:\nInkosi Albert Luthuli Central Hospital\nLower Block A Residential Village\n800 Vusi Mzemela Road\nCato Manor, Durban 4091\n</string>
+    <string name="physical_address_pmb">PMB:\n29 Carnoustie Road\nChase Valley Heights\nPietermaritzburg\n3201</string>
+    <string name="banking_details_title">Banking Details</string>
+    <string name="bank_name">CHOC KZN\nStandard Bank Killarney\nAccount No: 241 319 978\nBranch Code: 007205</string>
+    <string name="social_media_title">Social Media</string>
+    <string name="facebook_link">https://www.facebook.com/CHOC.Childhood.Cancer.Foundation/</string>
+</resources>

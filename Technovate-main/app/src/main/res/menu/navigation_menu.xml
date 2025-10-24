@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@android:drawable/ic_menu_compass"
+            android:title="@string/nav_home" />
+        <item
+            android:id="@+id/nav_about"
+            android:icon="@android:drawable/ic_menu_info_details"
+            android:title="@string/nav_about" />
+        <item
+            android:id="@+id/nav_contacts"
+            android:icon="@android:drawable/ic_menu_call"
+            android:title="@string/nav_contacts" />
+        <item
+            android:id="@+id/nav_donate"
+            android:icon="@android:drawable/ic_menu_share"
+            android:title="@string/nav_donate" />
+        <item
+            android:id="@+id/nav_events"
+            android:icon="@android:drawable/ic_menu_today"
+            android:title="@string/nav_events" />
+        <item
+            android:id="@+id/nav_volunteer"
+            android:icon="@android:drawable/ic_menu_myplaces"
+            android:title="@string/nav_volunteer" />
+
+        <item
+            android:id="@+id/nav_nutrition"
+            android:icon="@android:drawable/ic_menu_agenda"
+            android:title="@string/nav_nutrition" />
+
+        <item
+            android:id="@+id/nav_videos"
+            android:icon="@drawable/ic_video"
+            android:title="Educational Videos" />
+
+        <item
+            android:id="@+id/nav_remembrance_wall"
+            android:icon="@android:drawable/star_on"
+            android:title="Rememberance Wall" />
+    </group>
+</menu>

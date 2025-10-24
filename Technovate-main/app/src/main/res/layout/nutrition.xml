@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF5F5"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Header Section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_marginBottom="24dp"
+            android:background="@drawable/rounded_header"
+            android:padding="20dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nutrition During Treatment"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="#2E7D32"
+                android:gravity="center"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="sans-serif-medium" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="A Guide to Supporting Your Little Warrior"
+                android:textSize="16sp"
+                android:textColor="#555555"
+                android:gravity="center"
+                android:lineSpacingMultiplier="1.2" />
+        </LinearLayout>
+
+        <!-- Introduction Section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/rounded_card"
+            android:padding="20dp"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="When your child is fighting cancer, food becomes more than just a meal, it's a powerful tool to help them stay strong. Good nutrition is essential because it provides the energy and building blocks their body needs to heal, fight infections, and cope with the side effects of treatment."
+                android:textSize="15sp"
+                android:textColor="#333333"
+                android:lineSpacingMultiplier="1.4"
+                android:layout_marginBottom="12dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="By focusing on gentle, nourishing foods, you can help support your little warrior's immune system, maintain their strength, and make their journey a little bit easier. This guide is here to provide you with practical, simple, and comforting food ideas to help you through this time."
+                android:textSize="15sp"
+                android:textColor="#333333"
+                android:lineSpacingMultiplier="1.4" />
+        </LinearLayout>
+
+        <!-- Disclaimer Section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/rounded_warning"
+            android:padding="16dp"
+            android:layout_marginBottom="24dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="⚠️ Important Disclaimer"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#D32F2F"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Always check with your child's healthcare team before introducing new foods, especially during treatment."
+                android:textSize="14sp"
+                android:textColor="#D32F2F"
+                android:lineSpacingMultiplier="1.3" />
+        </LinearLayout>
+
+        <!-- Quick & Healthy Snack Ideas Section -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="🥪 Quick and Healthy Snack Ideas"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#2E7D32"
+            android:layout_marginBottom="16dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Easy, gentle, and budget-friendly"
+            android:textSize="14sp"
+            android:textColor="#666666"
+            android:layout_marginBottom="20px"
+            android:fontStyle="italic" />
+
+        <!-- Symptom Tabs (Would be implemented with ViewPager2 in actual code) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="20dp"
+            android:gravity="center">
+
+            <!-- This would be a TabLayout in practice -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nausea"
+                android:background="@drawable/tab_background"
+                android:padding="12dp"
+                android:layout_margin="4dp"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#FF9800" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mouth Sores"
+                android:background="@drawable/tab_background"
+                android:padding="12dp"
+                android:layout_margin="4dp"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#2196F3" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Low Appetite"
+                android:background="@drawable/tab_background"
+                android:padding="12dp"
+                android:layout_margin="4dp"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#4CAF50" />
+        </LinearLayout>
+
+        <!-- Sample Symptom Content -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/rounded_card"
+            android:padding="20dp"
+            android:layout_marginBottom="24dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="For Nausea / Upset Stomach"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#FF9800"
+                android:layout_marginBottom="12dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="• Dry crackers or plain toast (easy on the stomach)"
+                    android:textSize="14sp"
+                    android:textColor="#333333"
+                    android:layout_marginBottom="4dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="• Ginger rooibos tea (gentle, helps with nausea)"
+                    android:textSize="14sp"
+                    android:textColor="#333333"
+                    android:layout_marginBottom="4dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="• Cold fruit smoothies (banana + pawpaw + yogurt, avoid citrus)"
+                    android:textSize="14sp"
+                    android:textColor="#333333"
+                    android:layout_marginBottom="4dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="• Plain mashed potatoes with a drizzle of olive oil"
+                    android:textSize="14sp"
+                    android:textColor="#333333"
+                    android:layout_marginBottom="4dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="• Rice porridge with soft vegetables or chicken broth"
+                    android:textSize="14sp"
+                    android:textColor="#333333" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Do's & Don'ts Section -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="✅ Do's and ❌ Don'ts for Food and Nutrition"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#2E7D32"
+            android:layout_marginBottom="16dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="24dp">
+
+            <!-- Do's Column -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:background="@drawable/rounded_card_green"
+                android:padding="16dp"
+                android:layout_marginEnd="8dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="✅ Do's"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="#2E7D32"
+                    android:layout_marginBottom="12dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="• Wash and cook all vegetables thoroughly\n• Peel all fruits to reduce infection risk\n• Offer small, frequent meals\n• Use high-energy foods\n• Keep your child well-hydrated\n• Store and reheat leftovers properly\n• Involve your child in choosing safe snacks"
+                    android:textSize="13sp"
+                    android:textColor="#333333"
+                    android:lineSpacingMultiplier="1.3" />
+            </LinearLayout>
+
+            <!-- Don'ts Column -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:background="@drawable/rounded_card_red"
+                android:padding="16dp"
+                android:layout_marginStart="8dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="❌ Don'ts"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="#D32F2F"
+                    android:layout_marginBottom="12dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="• Don't give raw or undercooked foods\n• Don't serve unpasteurized dairy\n• Don't offer street foods or takeaways\n• Don't give very spicy, acidic foods\n• Don't leave food standing out\n• Don't force your child to eat\n• Don't use honey for children under 1"
+                    android:textSize="13sp"
+                    android:textColor="#333333"
+                    android:lineSpacingMultiplier="1.3" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Meal Ideas Section -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="🍽️ Meal Ideas"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#2E7D32"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Breakfast Options -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/rounded_card"
+            android:padding="16dp"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="✅ Breakfast Options"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#FF9800"
+                android:layout_marginBottom="12dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="1. Oats with mashed banana\n2. Soft mielie pap with milk and butter\n3. Scrambled eggs on soft bread\n4. Smoothie bowl\n5. French toast (mild)\n6. Mashed avocado on soft brown bread\n7. Mini pumpkin muffins"
+                android:textSize="14sp"
+                android:textColor="#333333"
+                android:lineSpacingMultiplier="1.3" />
+        </LinearLayout>
+
+        <!-- Main Meal Ideas -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/rounded_card"
+            android:padding="16dp"
+            android:layout_marginBottom="24dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="✅ Main Meal Ideas"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#2196F3"
+                android:layout_marginBottom="12dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="• Soft chicken stew\n• Maize meal porridge (pap)\n• Fish cakes\n• Mild soups\n• Macaroni and cheese\n• Creamy butternut and sweet potato soup\n• Steamed pumpkin with soft pap"
+                android:textSize="14sp"
+                android:textColor="#333333"
+                android:lineSpacingMultiplier="1.3" />
+        </LinearLayout>
+
+        <!-- Call to Action -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:background="@drawable/rounded_header"
+            android:padding="24dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="📱 Available in CHOC App"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#2E7D32"
+                android:gravity="center"
+                android:layout_marginBottom="12dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="• Snack of the Day Widget\n• Do's and Don'ts Quick Tips\n• Filter by Symptom"
+                android:textSize="14sp"
+                android:textColor="#555555"
+                android:gravity="center"
+                android:lineSpacingMultiplier="1.3" />
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

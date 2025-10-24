@@ -1,0 +1,27 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="end"
+    android:padding="8dp">
+
+    <!-- User message text on the left -->
+    <TextView
+        android:id="@+id/userMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bubble_user"
+        android:padding="10dp"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:maxWidth="250dp"
+        android:layout_marginEnd="8dp" />
+
+    <!-- User icon on the right -->
+    <ImageView
+        android:id="@+id/userIcon"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/person"
+        android:contentDescription="User Icon" />
+</LinearLayout>

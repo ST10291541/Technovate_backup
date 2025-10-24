@@ -1,0 +1,49 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="8dp">
+
+    <!-- Row for icon and message -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="start|center_vertical">
+
+        <!-- Bot icon on the left -->
+        <ImageView
+            android:id="@+id/botIcon"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="8dp"
+            android:src="@drawable/cow_mascot"
+            android:contentDescription="Chatbot Icon" />
+
+        <!-- Bot message text -->
+        <TextView
+            android:id="@+id/botMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bubble_bot"
+            android:padding="10dp"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:maxWidth="250dp"
+            android:autoLink="phone|email"
+            android:linksClickable="true"/>
+
+    </LinearLayout>
+
+    <!-- Buttons area -->
+    <GridLayout
+        android:id="@+id/optionContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="3"
+        android:visibility="gone"
+        android:layout_marginTop="8dp"
+        android:useDefaultMargins="true"
+        android:alignmentMode="alignMargins"
+        android:rowOrderPreserved="false" />
+</LinearLayout>
