@@ -4,12 +4,12 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
+import com.google.android.material.appbar.MaterialToolbar
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.coroutines.launch
 
-class AdminEditActivity : AppCompatActivity() {
+class AdminEditActivity : BaseActivity() {
 
     private lateinit var db: FirebaseFirestore
 
@@ -46,6 +46,18 @@ class AdminEditActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_admin_edit)
+
+        // Set up the toolbar
+        val toolbar = findViewById<MaterialToolbar>(R.id.topAppBar)
+        setSupportActionBar(toolbar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_menu)
+
+        // Find drawer layout
+        drawerLayout = findViewById(R.id.drawer_layout)
+
+        // Setup navigation drawer
+        setupNavigationDrawer()
 
         db = FirebaseFirestore.getInstance()
         initializeViews()

@@ -59,37 +59,28 @@
                     android:textColor="@android:color/white"
                     android:layout_marginBottom="16dp" />
 
-                <!-- Scrollable Grid for Hearts -->
-                <ScrollView
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/remembranceGrid"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="1">
-
-                    <GridLayout
-                        android:id="@+id/remembranceGrid"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:rowCount="20"
-                        android:columnCount="5"
-                        android:alignmentMode="alignMargins"
-                        android:useDefaultMargins="true" />
-                </ScrollView>
+                    android:layout_weight="1"
+                    android:padding="8dp" />
 
                 <!-- TextView to display name in the center -->
-                <TextView
-                    android:id="@+id/nameDisplay"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="No name selected"
-                    android:textSize="24sp"
-                    android:textColor="@android:color/white"
-                    android:gravity="center"
-                    android:visibility="gone"
-                    android:layout_gravity="center" />
-            </LinearLayout>
-        </androidx.core.widget.NestedScrollView>
+        <!--  <TextView
+              android:id="@+id/nameDisplay"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="No name selected"
+              android:textSize="24sp"
+              android:textColor="@android:color/white"
+              android:gravity="center"
+              android:visibility="gone"
+              android:layout_gravity="center" /> -->
+      </LinearLayout>
+  </androidx.core.widget.NestedScrollView>
 
-        <!-- Floating Action Button -->
+  <!-- Floating Action Button -->
         <LinearLayout
             android:id="@+id/fabContainer"
             android:layout_width="match_parent"

@@ -3,32 +3,32 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_home"
-            android:icon="@android:drawable/ic_menu_compass"
+            android:icon="@drawable/ic_home"
             android:title="@string/nav_home" />
         <item
             android:id="@+id/nav_about"
-            android:icon="@android:drawable/ic_menu_info_details"
+            android:icon="@drawable/ic_about"
             android:title="@string/nav_about" />
         <item
             android:id="@+id/nav_contacts"
-            android:icon="@android:drawable/ic_menu_call"
+            android:icon="@drawable/ic_contacts"
             android:title="@string/nav_contacts" />
         <item
             android:id="@+id/nav_donate"
-            android:icon="@android:drawable/ic_menu_share"
+            android:icon="@drawable/ic_donate"
             android:title="@string/nav_donate" />
         <item
             android:id="@+id/nav_events"
-            android:icon="@android:drawable/ic_menu_today"
+            android:icon="@drawable/ic_events"
             android:title="@string/nav_events" />
         <item
             android:id="@+id/nav_volunteer"
-            android:icon="@android:drawable/ic_menu_myplaces"
+            android:icon="@drawable/group"
             android:title="@string/nav_volunteer" />
 
         <item
             android:id="@+id/nav_nutrition"
-            android:icon="@android:drawable/ic_menu_agenda"
+            android:icon="@drawable/ic_nutrition"
             android:title="@string/nav_nutrition" />
 
         <item
@@ -38,7 +38,21 @@
 
         <item
             android:id="@+id/nav_remembrance_wall"
-            android:icon="@android:drawable/star_on"
+            android:icon="@drawable/ic_rememberance"
             android:title="Rememberance Wall" />
+
+        <!-- Admin section - will be shown/hidden programmatically -->
+        <item
+            android:id="@+id/nav_admin_dashboard"
+            android:icon="@drawable/ic_admin"
+            android:title="Admin Dashboard"
+            android:visible="false" />
+
+        <item
+            android:id="@+id/nav_admin_logout"
+            android:icon="@android:drawable/ic_lock_power_off"
+            android:title="Admin Logout"
+            android:visible="false" />
+
     </group>
 </menu>

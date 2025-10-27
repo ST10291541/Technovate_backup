@@ -2,24 +2,30 @@ package vcmsa.projects.chocui
 
 import android.content.Intent
 import android.view.MenuItem
+import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
+import com.google.firebase.Firebase
+import com.google.firebase.auth.auth
 
 open class BaseActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
     protected lateinit var drawerLayout: DrawerLayout
     protected lateinit var toggle: ActionBarDrawerToggle
-
+    protected lateinit var navigationView: NavigationView
 
     protected fun setupNavigationDrawer() {
         try {
             drawerLayout = findViewById(R.id.drawer_layout)
-            val navigationView = findViewById<NavigationView>(R.id.nav_view)
+            navigationView = findViewById<NavigationView>(R.id.nav_view)
             val toolbar = findViewById<androidx.appcompat.widget.Toolbar>(R.id.topAppBar)
-            
+
+            // Update admin menu items visibility
+            updateAdminMenuItems()
+
             navigationView.setNavigationItemSelectedListener(this)
 
             toggle = ActionBarDrawerToggle(
@@ -34,6 +40,19 @@ open class BaseActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
             toggle.syncState()
         } catch (e: Exception) {
             e.printStackTrace()
+        }
+    }
+
+    protected fun updateAdminMenuItems() {
+        val currentUser = Firebase.auth.currentUser
+        val isAdminLoggedIn = currentUser != null
+
+        // Show/hide admin menu items based on login status
+        try {
+            navigationView.menu.findItem(R.id.nav_admin_dashboard)?.isVisible = isAdminLoggedIn
+            navigationView.menu.findItem(R.id.nav_admin_logout)?.isVisible = isAdminLoggedIn
+        } catch (e: Exception) {
+            // Menu items might not exist in all layouts, that's okay
         }
     }
 
@@ -85,6 +104,16 @@ open class BaseActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
                 startActivityIfNotCurrent(RemembranceWallActivity::class.java)
                 true
             }
+            R.id.nav_admin_dashboard -> {
+                startActivity(Intent(context, AdminDashboardActivity::class.java))
+                true
+            }
+            R.id.nav_admin_logout -> {
+                Firebase.auth.signOut()
+                updateAdminMenuItems() // Hide admin items immediately
+                Toast.makeText(context, "Admin logged out", Toast.LENGTH_SHORT).show()
+                true
+            }
             else -> false
         }
 
@@ -107,5 +136,11 @@ open class BaseActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
         } else {
             super.onBackPressed()
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        // Update admin menu items whenever the activity resumes
+        updateAdminMenuItems()
     }
 }

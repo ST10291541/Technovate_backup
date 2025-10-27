@@ -7,12 +7,10 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true">
 
-    <!-- Main content container -->
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <!-- Toolbar -->
         <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -26,13 +24,12 @@
                 style="@style/Widget.Material3.Toolbar" />
         </com.google.android.material.appbar.AppBarLayout>
 
-        <!-- Scrollable content -->
-        <ScrollView
+        <!-- Use NestedScrollView instead of ScrollView for better CoordinatorLayout integration -->
+        <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:fillViewport="true"
             android:background="#FFFFFF"
-            android:paddingTop="16dp"
             app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
             <LinearLayout
@@ -41,7 +38,7 @@
                 android:orientation="vertical"
                 android:padding="16dp">
 
-                <!-- Header Section -->
+                <!-- Header Section (unchanged) -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -72,7 +69,7 @@
                         android:lineSpacingMultiplier="1.2" />
                 </LinearLayout>
 
-                <!-- Introduction Section -->
+                <!-- Introduction Section (unchanged) -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -99,7 +96,7 @@
                         android:lineSpacingMultiplier="1.4" />
                 </LinearLayout>
 
-                <!-- Disclaimer Section -->
+                <!-- Disclaimer Section (unchanged) -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -145,7 +142,7 @@
                     android:layout_marginBottom="20dp"
                     android:fontStyle="italic" />
 
-                <!-- Symptom Tabs -->
+                <!-- Symptom Tabs with WRAP_CONTENT height -->
                 <com.google.android.material.tabs.TabLayout
                     android:id="@+id/tabLayout"
                     android:layout_width="match_parent"
@@ -156,10 +153,11 @@
                 <androidx.viewpager2.widget.ViewPager2
                     android:id="@+id/viewPager"
                     android:layout_width="match_parent"
-                    android:layout_height="300dp"
+                    android:layout_height="wrap_content"
+                    android:minHeight="400dp"
                     android:layout_marginBottom="24dp" />
 
-                <!-- Do's & Don'ts Section -->
+                <!-- Do's & Don'ts Section (unchanged) -->
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -252,11 +250,12 @@
                 <androidx.viewpager2.widget.ViewPager2
                     android:id="@+id/mealViewPager"
                     android:layout_width="match_parent"
-                    android:layout_height="400dp"
+                    android:layout_height="wrap_content"
+                    android:minHeight="450dp"
                     android:layout_marginBottom="24dp" />
 
             </LinearLayout>
-        </ScrollView>
+        </androidx.core.widget.NestedScrollView>
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 

@@ -5,6 +5,8 @@ import android.os.Bundle
 import android.widget.ImageView
 import com.google.android.material.appbar.MaterialToolbar
 import com.google.android.material.card.MaterialCardView
+import com.google.firebase.Firebase
+import com.google.firebase.auth.auth
 
 class MainActivity : BaseActivity() {
 
@@ -12,9 +14,11 @@ class MainActivity : BaseActivity() {
     private lateinit var cardGetToKnowUs: MaterialCardView
     private lateinit var cardCancerInfo: MaterialCardView
 
+    private lateinit var goldenRibbon: ImageView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.home_layout) // make sure the filename matches!
+        setContentView(R.layout.home_layout)
 
         // Set up the toolbar
         val toolbar = findViewById<MaterialToolbar>(R.id.topAppBar)
@@ -25,7 +29,7 @@ class MainActivity : BaseActivity() {
         // Find drawer layout
         drawerLayout = findViewById(R.id.drawer_layout)
 
-        // Setup navigation drawer
+        // Setup navigation drawer - use admin menu if the admin is logged in
         setupNavigationDrawer()
 
         // Initialize navigation cards
@@ -50,9 +54,16 @@ class MainActivity : BaseActivity() {
         }
 
 // Set click listener for golden ribbon (admin login)
+        // In your MainActivity.kt, keep the golden ribbon click listener:
         goldenRibbon.setOnClickListener {
-            val intent = Intent(this, AdminLoginActivity::class.java)
-            startActivity(intent)
+            val currentUser = Firebase.auth.currentUser
+            if (currentUser != null) {
+                // Already logged in, go to admin dashboard
+                startActivity(Intent(this, AdminDashboardActivity::class.java))
+            } else {
+                // Not logged in, go to login screen
+                startActivity(Intent(this, AdminLoginActivity::class.java))
+            }
         }
     }
 }
