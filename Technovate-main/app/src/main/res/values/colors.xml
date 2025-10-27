@@ -13,4 +13,5 @@
     <color name="onSurface">#000000</color>
     <color name="onError">#FFFFFF</color>
     <color name="blue">#87CEFA</color>
+    <color name="white">#FFFFFF</color>
 </resources>
