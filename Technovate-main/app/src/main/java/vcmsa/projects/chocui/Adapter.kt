@@ -186,7 +186,7 @@ class Adapter(
                         width = 0
                         height = TypedValue.applyDimension(
                             TypedValue.COMPLEX_UNIT_DIP,
-                            80f, // Material standard button height
+                            85f, // Material standard button height
                             metrics
                         ).toInt()
                         columnSpec = GridLayout.spec(GridLayout.UNDEFINED, 1f)
