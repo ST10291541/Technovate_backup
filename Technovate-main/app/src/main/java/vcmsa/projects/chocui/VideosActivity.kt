@@ -1,8 +1,10 @@
 package vcmsa.projects.chocui
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 
 class VideosActivity : BaseActivity() {
@@ -29,6 +31,10 @@ class VideosActivity : BaseActivity() {
         recyclerView.adapter = VideoAdapter(videoList)
 
         setupNavigationDrawer()
+
+        findViewById<FloatingActionButton>(R.id.fabChat).setOnClickListener {
+            startActivity(Intent(this, Chatbot::class.java))
+        }
     }
 
     data class Video(val title: String, val videoId: String, val description: String)

@@ -1,7 +1,9 @@
 package vcmsa.projects.chocui
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.viewpager2.widget.ViewPager2
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 
@@ -35,6 +37,10 @@ class NutritionActivity : BaseActivity() {
 
         // Setup navigation drawer
         setupNavigationDrawer()
+
+        findViewById<FloatingActionButton>(R.id.fabChat).setOnClickListener {
+            startActivity(Intent(this, Chatbot::class.java))
+        }
     }
 
     private fun setupSymptomViewPager() {

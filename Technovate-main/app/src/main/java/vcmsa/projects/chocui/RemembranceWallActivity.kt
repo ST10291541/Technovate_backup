@@ -2,6 +2,7 @@ package vcmsa.projects.chocui
 
 import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
+import android.content.Intent
 import android.graphics.drawable.GradientDrawable
 import android.os.Bundle
 import android.view.Gravity
@@ -17,6 +18,7 @@ import androidx.core.animation.doOnEnd
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.appbar.MaterialToolbar
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import org.json.JSONArray
 import org.json.JSONObject
 import java.io.InputStream
@@ -53,6 +55,10 @@ class RemembranceWallActivity : BaseActivity() {
         recyclerView.layoutManager = GridLayoutManager(this, columnCount)
         recyclerView.adapter = HeartAdapter(names) { name ->
             showMemorialPopup(name)
+        }
+
+        findViewById<FloatingActionButton>(R.id.fabChat).setOnClickListener {
+            startActivity(Intent(this, Chatbot::class.java))
         }
     }
 

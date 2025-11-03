@@ -59,6 +59,28 @@
             </LinearLayout>
         </ScrollView>
 
+        <!-- Floating Action Button -->
+        <LinearLayout
+            android:id="@+id/fabContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:orientation="horizontal"
+            android:gravity="right"
+            android:padding="12dp"
+            android:elevation="6dp">
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fabChat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="8dp"
+                android:contentDescription="Go to Dashboard"
+                app:srcCompat="@drawable/bot_face"
+                android:backgroundTint="#87CEFA"
+                app:tint="@android:color/white" />
+        </LinearLayout>
+
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
     <!-- Navigation Drawer -->
